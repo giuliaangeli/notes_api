@@ -13,7 +13,7 @@ Essa API suporta métodos HTTP para interagir com os dados de forma eficiente.
 ## Requisitos
 
 - Ruby 3.0.0
-- Rails 7.x.x
+- Rails 7.0.8
 - Sqlite3
 
 ## Configuração

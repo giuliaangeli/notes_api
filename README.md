@@ -1,24 +1,82 @@
-# README
+# Notes API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Essa API suporta métodos HTTP para interagir com os dados de forma eficiente.
 
-Things you may want to cover:
+## Endpoints
 
-* Ruby version
+- `GET /api/notes` - Retorna todas as notas
+- `GET /api/notes/:id` - Retorna uma nota específica
+- `POST /api/notes` - Cria uma nova nota
+- `PATCH /api/notes/:id` - Atualiza uma nota existente
+- `DELETE /api/notes/:id` - Exclui uma nota existente
 
-* System dependencies
+## Requisitos
 
-* Configuration
+- Ruby 3.0.0
+- Rails 7.x.x
+- Sqlite3
 
-* Database creation
+## Configuração
 
-* Database initialization
+1. Clone o repositório:
 
-* How to run the test suite
+`git clone git@github.com:giuliaangeli/notes_api.git`
 
-* Services (job queues, cache servers, search engines, etc.)
+2.Instale as dependências:
 
-* Deployment instructions
+`bundle install`
 
-* ...
+3.Configure o banco de dados:
+
+`rails db:create db:migrate`
+
+4.Inicie o servidor:
+
+`rails server`
+
+Você poderá usar a interface em `http://localhost:3000/notes`
+
+Ou se preferir pode fazer testes manuais pelo endpoint `http://localhost:3000/api/notes`
+
+**GET /api/notes**
+- Método: GET
+- URL: `http://localhost:3000/api/notes`
+- Retorna todas as notas no formato JSON.
+
+**GET /api/notes/:id**
+- Método: GET
+- URL: `http://localhost:3000/api/notes/:id`
+- Retorna a nota com o id no formato JSON.
+
+**POST /api/notes**
+- Método: POST
+- URL: `http://localhost:3000/api/notes`
+
+Body Example:
+```
+{
+  "title": "New Note",
+  "content": "This is the content of the new note."
+}
+```
+- Cria uma nova nota e retorna os dados da nota criada.
+**não é possível criar notas título ou conteúdo
+
+**PATCH /api/notes/:id**
+- Método: PATCH
+- URL: `http://localhost:3000/api/notes/:id`
+
+Body Example:
+```
+{
+  "title": "New Title",
+  "content": "This is a different content."
+}
+```
+- Atualiza a nota informada e retorna os dados da nota atualizada.
+**não é possível atualizar notas com título ou conteúdo nulos
+
+**DELETE /api/notes/:id**
+- Método: DELETE
+- URL: `http://localhost:3000/api/notes/:id`
+- Exclui a nota informada e retorna o status 204 No Content.

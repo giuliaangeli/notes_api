@@ -1,6 +1,6 @@
 # Notes API
 
-Essa API suporta métodos HTTP para interagir com os dados de forma eficiente.
+Essa API suporta métodos HTTP para interagir com os dados.
 
 ## Endpoints
 
